@@ -97,43 +97,53 @@ function App() {
 
             <h3>Topics of Your Tweets</h3>
             <hr />
-            <div className="task-progress-2">
-              <p>Political</p>
+
+            <p>Political</p>
+            <div className="task-progress-2" >
               <progress className="progress-2 progress--task1" max="100" value="40"></progress>
             </div>
+            <br></br>
 
-            <div className="task-progress-2">
-              <p>Social</p>
+
+            <p>Social</p>
+            <div className="task-progress-2" >
               <progress className="progress-2 progress--task2" max="100" value="40"></progress>
             </div>
+            <br></br>
 
-            <div className="task-progress-2">
-              <p>International</p>
+            <p>International</p>
+            <div className="task-progress-2" >
               <progress className="progress-2 progress--task3" max="100" value="40"></progress>
             </div>
+            <br></br>
 
+            <p>Economics</p>
             <div className="task-progress-2">
-              <p>Economics</p>
               <progress className="progress-2 progress--task4" max="100" value="40"></progress>
             </div>
+            <br></br>
 
+
+            <p>Science/Technology</p>
             <div className="task-progress-2">
-              <p>Science Technology</p>
               <progress className="progress-2 progress--task1" max="100" value="40"></progress>
             </div>
+            <br></br>
 
+            <p>Cultural Art</p>
             <div className="task-progress-2">
-              <p>Cultural Art</p>
               <progress className="progress-2 progress--task2" max="100" value="40"></progress>
             </div>
+            <br></br>
 
+            <p>Sport</p>
             <div className="task-progress-2">
-              <p>Sport</p>
               <progress className="progress-2 progress--task3" max="100" value="40"></progress>
             </div>
+            <br></br>
 
+            <p>Medical</p>
             <div className="task-progress-2">
-              <p>Medical</p>
               <progress className="progress-2 progress--task4" max="100" value="40"></progress>
             </div>
 
@@ -143,58 +153,78 @@ function App() {
 
 <h3>Topics of Your Media Images</h3>
 <hr />
+
+<p>Animal</p>
 <div className="task-progress-2">
-  <p>Animal</p>
   <progress className="progress-2 progress--task1" max="100" value="40"></progress>
 </div>
+<br></br>
 
+<p>Landscape</p>
 <div className="task-progress-2">
-  <p>Landscape</p>
   <progress className="progress-2 progress--task2" max="100" value="40"></progress>
 </div>
+<br></br>
 
+
+<p>Sport</p>
 <div className="task-progress-2">
-  <p>Sport</p>
   <progress className="progress-2 progress--task3" max="100" value="40"></progress>
 </div>
+<br></br>
 
+
+<p>Text</p>
 <div className="task-progress-2">
-  <p>Text</p>
   <progress className="progress-2 progress--task4" max="100" value="40"></progress>
 </div>
+<br></br>
 
+
+<p>Art</p>
 <div className="task-progress-2">
-  <p>Art</p>
   <progress className="progress-2 progress--task1" max="100" value="40"></progress>
 </div>
+<br></br>
 
+
+<p>Object</p>
 <div className="task-progress-2">
-  <p>Object</p>
   <progress className="progress-2 progress--task2" max="100" value="40"></progress>
 </div>
+<br></br>
 
+
+<p>Food</p>
 <div className="task-progress-2">
-  <p>Food</p>
   <progress className="progress-2 progress--task3" max="100" value="40"></progress>
 </div>
+<br></br>
 
+
+<p>People</p>
 <div className="task-progress-2">
-  <p>People</p>
   <progress className="progress-2 progress--task4" max="100" value="40"></progress>
 </div>
+<br></br>
 
+
+<p>Movie</p>
 <div className="task-progress-2">
-  <p>Movie</p>
   <progress className="progress-2 progress--task4" max="100" value="40"></progress>
 </div>
+<br></br>
 
+
+<p>Shop</p>
 <div className="task-progress-2">
-  <p>Shop</p>
   <progress className="progress-2 progress--task4" max="100" value="40"></progress>
 </div>
+<br></br>
 
+
+<p>Music</p>
 <div className="task-progress-2">
-  <p>Music</p>
   <progress className="progress-2 progress--task4" max="100" value="40"></progress>
 </div>
 
