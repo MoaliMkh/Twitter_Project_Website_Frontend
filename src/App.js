@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Chart from 'chart.js/auto';
+import Chart, { Colors } from 'chart.js/auto';
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
@@ -74,15 +74,15 @@ function App() {
 
         </div>
 
-        <div className="task-progress">
-          <p>How much similar are you in the real-world similar to your tweets?
+        <div className="task-progress" style={{marginTop: 80}}>
+          <p>How much similar are you in the <b style={{color: 'red'}}>real-world</b> compared to your <b style={{color: 'red'}}>tweets</b>?
           <span>20/3-0</span>
           </p>
           <progress className="progress progress--task3" max="100" value="20"></progress>
         </div>
 
-        <div className="task-progress">
-          <p>How much similar are you in the real-world similar to your images?
+        <div className="task-progress" style={{marginTop: 50}}>
+          <p>How much similar are you in the <b style={{color: 'red'}}>real-world</b> compared to your <b style={{color: 'red'}}>images</b>?
           <span>20/3-0</span>
           </p>
           <progress className="progress progress--task4" max="100" value="40"></progress>
@@ -98,50 +98,42 @@ function App() {
             <h3>Topics of Your Tweets</h3>
             <hr />
             <div className="task-progress-2">
-              <p>Politics
-              </p>
+              <p>Political</p>
               <progress className="progress-2 progress--task1" max="100" value="40"></progress>
             </div>
 
             <div className="task-progress-2">
-              <p>Social
-              </p>
+              <p>Social</p>
               <progress className="progress-2 progress--task2" max="100" value="40"></progress>
             </div>
 
             <div className="task-progress-2">
-              <p>Social
-              </p>
+              <p>International</p>
               <progress className="progress-2 progress--task3" max="100" value="40"></progress>
             </div>
 
             <div className="task-progress-2">
-              <p>Social
-              </p>
+              <p>Economics</p>
               <progress className="progress-2 progress--task4" max="100" value="40"></progress>
             </div>
 
             <div className="task-progress-2">
-              <p>Social
-              </p>
+              <p>Science Technology</p>
               <progress className="progress-2 progress--task1" max="100" value="40"></progress>
             </div>
 
             <div className="task-progress-2">
-              <p>Social
-              </p>
+              <p>Cultural Art</p>
               <progress className="progress-2 progress--task2" max="100" value="40"></progress>
             </div>
 
             <div className="task-progress-2">
-              <p>Social
-              </p>
+              <p>Sport</p>
               <progress className="progress-2 progress--task3" max="100" value="40"></progress>
             </div>
 
             <div className="task-progress-2">
-              <p>Social
-              </p>
+              <p>Medical</p>
               <progress className="progress-2 progress--task4" max="100" value="40"></progress>
             </div>
 
@@ -152,68 +144,57 @@ function App() {
 <h3>Topics of Your Media Images</h3>
 <hr />
 <div className="task-progress-2">
-  <p>Politics
-  </p>
+  <p>Animal</p>
   <progress className="progress-2 progress--task1" max="100" value="40"></progress>
 </div>
 
 <div className="task-progress-2">
-  <p>Social
-  </p>
+  <p>Landscape</p>
   <progress className="progress-2 progress--task2" max="100" value="40"></progress>
 </div>
 
 <div className="task-progress-2">
-  <p>Social
-  </p>
+  <p>Sport</p>
   <progress className="progress-2 progress--task3" max="100" value="40"></progress>
 </div>
 
 <div className="task-progress-2">
-  <p>Social
-  </p>
+  <p>Text</p>
   <progress className="progress-2 progress--task4" max="100" value="40"></progress>
 </div>
 
 <div className="task-progress-2">
-  <p>Social
-  </p>
+  <p>Art</p>
   <progress className="progress-2 progress--task1" max="100" value="40"></progress>
 </div>
 
 <div className="task-progress-2">
-  <p>Social
-  </p>
+  <p>Object</p>
   <progress className="progress-2 progress--task2" max="100" value="40"></progress>
 </div>
 
 <div className="task-progress-2">
-  <p>Social
-  </p>
+  <p>Food</p>
   <progress className="progress-2 progress--task3" max="100" value="40"></progress>
 </div>
 
 <div className="task-progress-2">
-  <p>Social
-  </p>
+  <p>People</p>
   <progress className="progress-2 progress--task4" max="100" value="40"></progress>
 </div>
 
 <div className="task-progress-2">
-  <p>Social
-  </p>
+  <p>Movie</p>
   <progress className="progress-2 progress--task4" max="100" value="40"></progress>
 </div>
 
 <div className="task-progress-2">
-  <p>Social
-  </p>
+  <p>Shop</p>
   <progress className="progress-2 progress--task4" max="100" value="40"></progress>
 </div>
 
 <div className="task-progress-2">
-  <p>Social
-  </p>
+  <p>Music</p>
   <progress className="progress-2 progress--task4" max="100" value="40"></progress>
 </div>
 
