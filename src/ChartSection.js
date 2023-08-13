@@ -5,20 +5,56 @@ import {Button} from 'antd'
 import { Link } from 'react-router-dom';
 import { RightOutlined} from '@ant-design/icons';
 
+let chart1 = null;
+let chart2 = null;
+let chart3 = null;
 
 
-const ChartSection = () => {
+const ChartSection = (props) => {
 
     useEffect(() => {
-      loadChart('Tweets', [12, 19, 3, 5, 2])
-      loadChart('Images', [3, 4, 3, 4, 3])
-      loadChart('Friends', [4, 5, 8, 3, 2])
+      const image_sentiments = props.images.split('#').map(str => {
+        return parseInt(str, 10);
+      });
+      const tweet_sentiments = props.tweets.split('#').map(str => {
+        return parseInt(str, 10);
+      });
+      const friends_sentiments= props.frineds.split('#').map(str => {
+        return parseInt(str, 10);
+      });
+
+      if (chart1 != null){
+        chart1.destroy()
+        chart1 = loadChart('Tweets', tweet_sentiments);
+      }
+      
+      else{
+        chart1 = loadChart('Tweets', tweet_sentiments);
+      }
+
+      if (chart2 != null){
+        chart2.destroy()
+        chart2 = loadChart('Images', image_sentiments);
+      }
+
+      else{
+          chart2 = loadChart('Images', image_sentiments);
+      }
+
+      if (chart3 != null){
+        chart3.destroy()
+        chart3 = loadChart('Friends', friends_sentiments)
+
+      }
+      else{
+        chart3 = loadChart('Friends', friends_sentiments)
+      }
     });
 
     const loadChart = (id, data) => {
       const ctx = document.getElementById(id);
     
-      new Chart(ctx, {
+      return new Chart(ctx, {
         type: 'doughnut',
         data: {
           labels: ['Angry', 'Sad', 'Neutral', 'Joy/Happy', 'Surprise/Emotional'],
