@@ -20,12 +20,11 @@ function App() {
     console.log(response)
   }
 
-  const submitID = (id) => {
+  const submitID = () => {
     setIsLoading(true)
-    console.log("THE ID IS" + id)
     setTimeout(function() {
       //your code to be executed after 1 second
-      getResponse(id)
+      getResponse(twitterID)
       setIsLoading(false)
       setResultReady(true)
     }, 1500);
@@ -41,7 +40,7 @@ function App() {
     </div>
     {isLoading? 
     <div style={{ marginTop: 300}}><IsLoadingComponent /></div>: 
-    resultReady? <div><ChartSection /><Topics/></div> : <InputComponent twitterId={twitterID} setTwitterID={setTwitterID} submitID={submitID} />}
+    resultReady? <div><ChartSection /><Topics/></div> : <InputComponent twitterId={twitterID} setTwitterID={setTwitterID} submitCallback={submitID} />}
 
     </div>
   );
