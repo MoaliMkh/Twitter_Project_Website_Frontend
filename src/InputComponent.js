@@ -3,7 +3,7 @@ const InputComponent = (props) => {
 
     const twitterID = props.twitterID;
     const setTwitterID = props.setTwitterID;
-    const submitCallback = props.submitCallback
+    const submitCallback = props.submitCallback;
 
     return(
         <div style={{width: '25%', alignSelf: 'center', marginLeft: '37.5%'}}>

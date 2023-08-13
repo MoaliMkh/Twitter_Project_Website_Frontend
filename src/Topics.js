@@ -1,4 +1,6 @@
 import './App.css';
+import { ProgressBarComponent } from '@syncfusion/ej2-react-progressbar';
+
 
 const Topics = () => {
 
@@ -16,12 +18,12 @@ const Topics = () => {
             <br></br>
 
 
-            {/* <ProgressBarComponent id="lineardeterminate" color='red' type='Linear' trackThickness={10} progressThickness={10} width='50%' value={60} animation={{
+            <ProgressBarComponent id="lineardeterminate" color='red' type='Linear' trackThickness={10} progressThickness={10} width='50%' value={60} animation={{
               enable: true,
               duration: 1000,
               delay: 0
                 }}>
-            </ProgressBarComponent> */}
+            </ProgressBarComponent>
 
             <p>Social</p>
             <div className="task-progress-2" >

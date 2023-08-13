@@ -1,31 +1,19 @@
 import './ChartSection.css';
-import Chart, { Colors } from 'chart.js/auto';
+import Chart from 'chart.js/auto';
 import { useEffect } from "react";
+import {Button} from 'antd'
+import { Link } from 'react-router-dom';
 
 
 
 const ChartSection = () => {
 
     useEffect(() => {
-      // code to run after render goes here
       loadChart('Tweets', [12, 19, 3, 5, 2])
       loadChart('Images', [3, 4, 3, 4, 3])
       loadChart('Friends', [4, 5, 8, 3, 2])
-      // setInterval(() => {
-      //   /*
-      //       Run a function or set any state here
-      //   */
-      //       setProg(10)
-      //       setProg(20)
-      //       setProg(30)
-      //       setProg(40)
-      // //  else{
-      // //   setProg(50)
-      // //   return
+      // loadImageChart([3, 4, 3, 4, 3]) /  x /
 
-      // //  }
-
-      // }, 1000);
     });
 
     const loadChart = (id, data) => {
@@ -84,6 +72,9 @@ const ChartSection = () => {
         </p>
         <progress className="progress progress--task4" max="100" value="40"></progress>
       </div>
+      <Link to='topics'>
+      <Button style={{marginTop: 10}} danger ghost>Next</Button>
+      </Link>
     </div>
 
     );
