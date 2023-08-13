@@ -1,10 +1,10 @@
 import './App.css';
-import ChartSection from './ChartSection';
 import Topics from './Topics';
 import Home from './Home'
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { registerLicense } from '@syncfusion/ej2-base';
+import ChartResultsAfterTopics from './ChartResultsAfterTopics';
 
 // Registering Syncfusion license key
 registerLicense('ORg4AjUWIQA/Gnt2V1hiQlRPf0BDX3xLflF1VWZTflZ6cFRWESFaRnZdQV1rSH1Tc0ZjXHxccHFX');
@@ -17,7 +17,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="topics" element={<Topics />} />
-      <Route path="charts" element={<ChartSection />} />
+      <Route path="charts" element={<ChartResultsAfterTopics />} />
     </Routes>
   </div>
   );

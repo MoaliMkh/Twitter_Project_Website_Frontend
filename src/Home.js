@@ -6,11 +6,13 @@ import IsLoadingComponent from './IsLoadingComponent'
 import ChartSection from './ChartSection'
 
 
-const Home = () => {
 
+const Home = () => {
     const [twitterID, setTwitterID] = useState("")
     const [isLoading, setIsLoading] = useState(false)
     const [resultReady, setResultReady] = useState(false)
+
+
   
     const getResponse = async (username) => {
       const response = await axios.get('http://127.0.0.1:8000/user/', {
@@ -28,7 +30,6 @@ const Home = () => {
       }, 1500);
     
     }
-
 
     return (
     <div>

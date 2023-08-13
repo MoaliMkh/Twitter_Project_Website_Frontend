@@ -1,4 +1,5 @@
 import { Input, Button } from 'antd';
+
 const InputComponent = (props) => {
 
     const twitterID = props.twitterID;

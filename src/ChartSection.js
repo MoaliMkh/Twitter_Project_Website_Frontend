@@ -3,6 +3,7 @@ import Chart from 'chart.js/auto';
 import { useEffect } from "react";
 import {Button} from 'antd'
 import { Link } from 'react-router-dom';
+import { RightOutlined} from '@ant-design/icons';
 
 
 
@@ -12,8 +13,6 @@ const ChartSection = () => {
       loadChart('Tweets', [12, 19, 3, 5, 2])
       loadChart('Images', [3, 4, 3, 4, 3])
       loadChart('Friends', [4, 5, 8, 3, 2])
-      // loadImageChart([3, 4, 3, 4, 3]) /  x /
-
     });
 
     const loadChart = (id, data) => {
@@ -40,7 +39,8 @@ const ChartSection = () => {
     }
 
     return (
-      <div className='top-container'>
+      <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', alignContent: 'center', paddingRight: 10}}>
+      <div className='top-container' style={{marginTop: 0, marginRight: 10}}>
 
       <div className='sentiment-container'>
 
@@ -72,9 +72,10 @@ const ChartSection = () => {
         </p>
         <progress className="progress progress--task4" max="100" value="40"></progress>
       </div>
-      <Link to='topics'>
-      <Button style={{marginTop: 10}} danger ghost>Next</Button>
-      </Link>
+    </div>
+          <Link to='/topics'>
+          <Button icon={<RightOutlined />} size='large' dir='rtl' style={{marginLeft: 40}} danger ghost>Next</Button>
+          </Link>
     </div>
 
     );
