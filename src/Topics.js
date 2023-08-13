@@ -1,5 +1,4 @@
 import './App.css';
-import ProgressBar from 'react-animated-progress-bar';
 
 const Topics = () => {
 
@@ -16,19 +15,6 @@ const Topics = () => {
             </div>
             <br></br>
 
-            <ProgressBar
-              width="400px"
-              height="10px"
-              rect
-              fontColor="gray"
-              
-              percentage="70"
-              rectPadding="1px"
-              rectBorderRadius="20px"
-              trackPathColor="transparent"
-              bgColor="#333333"
-              trackBorderColor="grey"
-            />
 
             {/* <ProgressBarComponent id="lineardeterminate" color='red' type='Linear' trackThickness={10} progressThickness={10} width='50%' value={60} animation={{
               enable: true,
@@ -36,7 +22,6 @@ const Topics = () => {
               delay: 0
                 }}>
             </ProgressBarComponent> */}
-
 
             <p>Social</p>
             <div className="task-progress-2" >

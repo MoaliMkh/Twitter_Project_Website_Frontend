@@ -7,7 +7,6 @@ import ChartSection from './ChartSection';
 import Topics from './Topics';
 import InputComponent from './InputComponent'
 
-
 function App() {
 
   const [twitterID, setTwitterID] = useState("")
