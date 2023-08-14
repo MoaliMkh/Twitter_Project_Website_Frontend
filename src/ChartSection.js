@@ -13,9 +13,6 @@ let chart3 = null;
 
 const ChartSection = () => {
   const {state} = useLocation();
-  console.log("THE STATE IS: " + JSON.stringify(state))
-  console.log(state.tweets)
-
 
 
     useEffect(() => {
