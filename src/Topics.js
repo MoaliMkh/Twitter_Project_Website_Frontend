@@ -1,9 +1,10 @@
 import './App.css';
-import { ProgressBarComponent } from '@syncfusion/ej2-react-progressbar';
 import { Link } from 'react-router-dom';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import {Button} from 'antd'
 import { useLocation } from 'react-router-dom';
+import TweetsTopicsProgressBars from './TweetsTopicsProgressBars';
+import ImagesTopicsProgressBars from './ImagesTopicsProgressBars';
 
 
 const Topics = () => {
@@ -20,20 +21,36 @@ const Topics = () => {
       });
 
       let sum_of_tweet_topics = 0
+      let tweets_topic_dict = {}
+      let tweets_topic_names = ['Economics', 'International', 'Political', 'Science/Technology', 'Cultural Art', 'Sport', 'Medical', 'Social']
       for (let i = 0; i < tweets_topics.length; i++){
+        tweets_topic_dict[tweets_topic_names[i]] = tweets_topics[i]
         sum_of_tweet_topics = sum_of_tweet_topics + tweets_topics[i];
       }
 
+      const sortedObjectTweetTopic = Object.entries(tweets_topic_dict).sort((x, y) => y[1] - x[1]);
+      const sortedTweetTopics = Object.fromEntries(sortedObjectTweetTopic)
+      console.log(sortedTweetTopics)
+
+
+
+
+      let images_topic_names = ['Animal', 'Landscape', 'Sport', 'Text', 'Art', 'Object', 'Food', 'People', 'Movie', 'Music', 'Shop']
+      let images_topic_dict = {}
       let sum_of_image_topics = 0
       for (let i = 0; i < images_topics.length; i++){
+        images_topic_dict[images_topic_names[i]] = images_topics[i]
         sum_of_image_topics = sum_of_image_topics + images_topics[i];
       }
+      const sortedObjectImageTopic = Object.entries(images_topic_dict).sort((x, y) => y[1] - x[1]);
+      const sortedImageTopics = Object.fromEntries(sortedObjectImageTopic)
+      console.log(sortedImageTopics)
 
 
     return (
         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', alignContent: 'center', paddingRight: 10}} >
         
-        <Link to='/charts' state={state}>
+        <Link to='/newcharts' state={state}>
         <Button icon={<LeftOutlined />} size='large' style={{marginLeft: 40}} danger ghost>Prev</Button>
         </Link>
 
@@ -42,95 +59,7 @@ const Topics = () => {
 
             <h3>Topics of Your Tweets</h3>
             <hr />
-
-            <p>Economics</p>
-            <div className="task-progress-2" >
-              <ProgressBarComponent cornerRadius='100%' id="lineardeterminate" type='Linear' showProgressValue={true} progressColor="#ff6b6b" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' maximum={sum_of_tweet_topics} value={tweets_topics[0]} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-            </div>
-            <br></br>
-
-
-            <p>International</p>
-            <div className="task-progress-2" >
-              <ProgressBarComponent id="lineardeterminate1" type='Linear' showProgressValue={true} progressColor="#feca57" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={tweets_topics[1]} maximum={sum_of_tweet_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-            </ProgressBarComponent>
-            </div>
-            <br></br>
-
-            <p>Political</p>
-            <div className="task-progress-2" >
-              <ProgressBarComponent id="lineardeterminate2" type='Linear' showProgressValue={true} progressColor="#46bd84" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={tweets_topics[2]} maximum={sum_of_tweet_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-            </ProgressBarComponent>
-            </div>
-            <br></br>
-
-            <p>Science/Technology</p>
-            <div className="task-progress-2">
-              <ProgressBarComponent id="lineardeterminate3" type='Linear' showProgressValue={true} progressColor="#08a0f7" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={tweets_topics[3]} maximum={sum_of_tweet_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-            </div>
-            <br></br>
-
-
-            <p>Cultural Art</p>
-            <div className="task-progress-2">
-              <ProgressBarComponent id="lineardeterminate4" type='Linear' showProgressValue={true} progressColor="#ff6b6b" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={tweets_topics[4]} maximum={sum_of_tweet_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-            </div>
-            <br></br>
-
-            <p>Sport</p>
-            <div className="task-progress-2">
-              <ProgressBarComponent id="lineardeterminate5" type='Linear' showProgressValue={true} progressColor="#feca57" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={tweets_topics[5]} maximum={sum_of_tweet_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-            </div>
-            <br></br>
-
-            <p>Medical</p>
-            <div className="task-progress-2">
-              <ProgressBarComponent id="lineardeterminate6" type='Linear' showProgressValue={true} progressColor="#46bd84" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={tweets_topics[6]} maximum={sum_of_tweet_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-            </div>
-            <br></br>
-
-            <p>Social</p>
-            <div className="task-progress-2">
-              <ProgressBarComponent id="lineardeterminate7" type='Linear' showProgressValue={true} progressColor="#ff6b6b" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={tweets_topics[7]} maximum={sum_of_tweet_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-            </div>
+        <TweetsTopicsProgressBars progressData={sortedTweetTopics} len={tweets_topics.length} />
 
         </div>
 
@@ -139,134 +68,7 @@ const Topics = () => {
         <h3>Topics of Your Media Images</h3>
         <hr />
 
-        <p>Animal</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate8" type='Linear' showProgressValue={true} progressColor="#ff6b6b" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[0]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
-        <br></br>
-
-        <p>Landscape</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate9" type='Linear' showProgressValue={true} progressColor="#feca57" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[1]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
-        <br></br>
-
-
-        <p>Sport</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate10" type='Linear' showProgressValue={true} progressColor="#46bd84" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[2]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
-        <br></br>
-
-
-        <p>Text</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate11" type='Linear' showProgressValue={true} progressColor="#08a0f7" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[3]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
-        <br></br>
-
-
-        <p>Art</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate12" type='Linear' showProgressValue={true} progressColor="#ff6b6b" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[4]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
-        <br></br>
-
-
-        <p>Object</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate13" type='Linear' showProgressValue={true} progressColor="#feca57" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[5]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
-        <br></br>
-
-
-        <p>Food</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate14" type='Linear' showProgressValue={true} progressColor="#46bd84" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[6]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
-        <br></br>
-
-
-        <p>People</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate15" type='Linear' showProgressValue={true} progressColor="#08a0f7" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[7]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
-        <br></br>
-
-
-        <p>Movie</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate16" type='Linear' showProgressValue={true} progressColor="#ff6b6b" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[8]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
-        <br></br>
-
-
-        <p>Music</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate17" type='Linear' showProgressValue={true} progressColor="#feca57" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[9]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
-        <br></br>
-
-
-        <p>Shop</p>
-        <div className="task-progress-2">
-        <ProgressBarComponent id="lineardeterminate18" type='Linear' showProgressValue={true} progressColor="#46bd84" innerRadius='80%' trackThickness={10} progressThickness={10} width='50%' value={images_topics[10]} maximum={sum_of_image_topics} animation={{
-              enable: true,
-              duration: 1000,
-              delay: 0
-                }}>
-             </ProgressBarComponent>
-        </div>
+        <ImagesTopicsProgressBars progressData={sortedImageTopics} len={images_topics.length}/>
 
         </div>
             </div>
