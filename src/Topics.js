@@ -10,9 +10,7 @@ import ImagesTopicsProgressBars from './ImagesTopicsProgressBars';
 const Topics = () => {
 
       const {state} = useLocation();
-      const images_distance = parseInt(state.all_data.images_distance)
-      const tweets_distance = parseInt(state.all_data.tweets_distance)
-      const tweet_image_dist = parseInt(state.all_data.images_tweets_distance)
+
       const images_topics = state.all_data.images_topics.split('#').map(str => {
         return parseInt(str, 10);
       });
@@ -31,9 +29,6 @@ const Topics = () => {
       const sortedObjectTweetTopic = Object.entries(tweets_topic_dict).sort((x, y) => y[1] - x[1]);
       const sortedTweetTopics = Object.fromEntries(sortedObjectTweetTopic)
       console.log(sortedTweetTopics)
-
-
-
 
       let images_topic_names = ['Animal', 'Landscape', 'Sport', 'Text', 'Art', 'Object', 'Food', 'People', 'Movie', 'Music', 'Shop']
       let images_topic_dict = {}

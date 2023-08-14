@@ -10,10 +10,12 @@ let chart1 = null;
 let chart2 = null;
 let chart3 = null;
 
-
 const ChartSection = () => {
   const {state} = useLocation();
 
+      const images_distance = parseInt(state.all_data.images_distance)
+      const tweets_distance = parseInt(state.all_data.tweets_distance)
+      const tweet_image_dist = parseInt(state.all_data.images_tweets_distance)
 
     useEffect(() => {
 
@@ -108,15 +110,23 @@ const ChartSection = () => {
         <p>How much similar are you in the <b style={{color: 'red'}}>real-world</b> compared to your <b style={{color: 'red'}}>tweets</b>?
         <span>20/3-0</span>
         </p>
-        <progress className="progress progress--task3" max="100" value="20"></progress>
+        <progress className="progress progress--task3" max="100" value={tweets_distance}></progress>
       </div>
 
       <div className="task-progress" style={{marginTop: 50}}>
         <p>How much similar are you in the <b style={{color: 'red'}}>real-world</b> compared to your <b style={{color: 'red'}}>images</b>?
         <span>20/3-0</span>
         </p>
-        <progress className="progress progress--task4" max="100" value="40"></progress>
+        <progress className="progress progress--task4" max="100" value={images_distance}></progress>
       </div>
+
+      <div className="task-progress" style={{marginTop: 50}}>
+        <p>How much similar are your <b style={{color: 'red'}}>tweets</b> compared to your <b style={{color: 'red'}}>images</b>?
+        <span>20/3-0</span>
+        </p>
+        <progress className="progress progress--task2" max="100" value={tweet_image_dist}></progress>
+      </div>
+
     </div>
           <Link to='/topics' state={state}>
           <Button icon={<RightOutlined />} size='large' dir='rtl' style={{marginLeft: 40}} danger ghost>Next</Button>
@@ -126,7 +136,5 @@ const ChartSection = () => {
 
     );
 }
-
-
 
 export default ChartSection;
