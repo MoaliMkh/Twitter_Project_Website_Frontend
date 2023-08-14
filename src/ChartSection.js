@@ -4,22 +4,29 @@ import { useEffect } from "react";
 import {Button} from 'antd'
 import { Link } from 'react-router-dom';
 import { RightOutlined} from '@ant-design/icons';
+import { useLocation } from 'react-router-dom';
 
 let chart1 = null;
 let chart2 = null;
 let chart3 = null;
 
 
-const ChartSection = (props) => {
+const ChartSection = () => {
+  const {state} = useLocation();
+  console.log("THE STATE IS: " + JSON.stringify(state))
+  console.log(state.tweets)
+
+
 
     useEffect(() => {
-      const image_sentiments = props.images.split('#').map(str => {
+
+      const image_sentiments = state.all_data.images_sentiments.split('#').map(str => {
         return parseInt(str, 10);
       });
-      const tweet_sentiments = props.tweets.split('#').map(str => {
+      const tweet_sentiments = state.all_data.tweets_sentiments.split('#').map(str => {
         return parseInt(str, 10);
       });
-      const friends_sentiments= props.frineds.split('#').map(str => {
+      const friends_sentiments = state.all_data.friends_sentiments.split('#').map(str => {
         return parseInt(str, 10);
       });
 
@@ -44,8 +51,8 @@ const ChartSection = (props) => {
       if (chart3 != null){
         chart3.destroy()
         chart3 = loadChart('Friends', friends_sentiments)
-
       }
+
       else{
         chart3 = loadChart('Friends', friends_sentiments)
       }
@@ -57,7 +64,7 @@ const ChartSection = (props) => {
       return new Chart(ctx, {
         type: 'doughnut',
         data: {
-          labels: ['Angry', 'Sad', 'Neutral', 'Joy/Happy', 'Surprise/Emotional'],
+          labels: ['Happy/Agreement', 'Sad/Disagreement', 'Angry', 'Neutral', 'Emotional(Surprise, Fear, Love, ...)'],
           datasets: [{
             label: '# of Votes',
             data: data,
@@ -75,6 +82,11 @@ const ChartSection = (props) => {
     }
 
     return (
+      <>
+        <div className='header-box'>
+        <h3>How Much Similarity Do You Have in The Real-World with Your Characteristics in Social Media?</h3>
+        <hr />    
+      </div>
       <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', alignContent: 'center', paddingRight: 10}}>
       <div className='top-container' style={{marginTop: 0, marginRight: 10}}>
 
@@ -109,10 +121,11 @@ const ChartSection = (props) => {
         <progress className="progress progress--task4" max="100" value="40"></progress>
       </div>
     </div>
-          <Link to='/topics'>
+          <Link to='/topics' state={state}>
           <Button icon={<RightOutlined />} size='large' dir='rtl' style={{marginLeft: 40}} danger ghost>Next</Button>
           </Link>
     </div>
+    </>
 
     );
 }
