@@ -93,14 +93,19 @@ const ChartSection = () => {
 
       <div className='pie-chart'>
         <canvas id="Tweets"></canvas>
+        <p>Your Tweets</p>
       </div>
 
       <div className='pie-chart'>
         <canvas id="Images"></canvas>
+        <p>Your Images</p>
+
       </div>
 
       <div className='pie-chart'>
         <canvas id="Friends"></canvas>
+        <p>Your Friends</p>
+
       </div>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -108,21 +113,21 @@ const ChartSection = () => {
 
       <div className="task-progress" style={{marginTop: 80}}>
         <p>How much similar are you in the <b style={{color: 'red'}}>real-world</b> compared to your <b style={{color: 'red'}}>tweets</b>?
-        <span>20/3-0</span>
+        <span>20/30</span>
         </p>
         <progress className="progress progress--task3" max="100" value={tweets_distance}></progress>
       </div>
 
       <div className="task-progress" style={{marginTop: 50}}>
         <p>How much similar are you in the <b style={{color: 'red'}}>real-world</b> compared to your <b style={{color: 'red'}}>images</b>?
-        <span>20/3-0</span>
+        <span>20/30</span>
         </p>
         <progress className="progress progress--task4" max="100" value={images_distance}></progress>
       </div>
 
       <div className="task-progress" style={{marginTop: 50}}>
         <p>How much similar are your <b style={{color: 'red'}}>tweets</b> compared to your <b style={{color: 'red'}}>images</b>?
-        <span>20/3-0</span>
+        <span>20/30</span>
         </p>
         <progress className="progress progress--task2" max="100" value={tweet_image_dist}></progress>
       </div>
