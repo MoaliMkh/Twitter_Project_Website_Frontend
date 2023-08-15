@@ -63,7 +63,7 @@ const ChartSection = () => {
       return new Chart(ctx, {
         type: 'doughnut',
         data: {
-          labels: ['Happy', 'Sad', 'Angry', 'Neutral', 'Passion/Surprise/Fear'],
+          labels: ['Happy', 'Sad', 'Angry', 'Neutral', 'Passion/Surprise/Nostalgia'],
           datasets: [{
             label: `# of ${id}`,
             data: data,
