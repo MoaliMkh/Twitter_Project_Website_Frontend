@@ -63,7 +63,7 @@ const ChartSection = () => {
       return new Chart(ctx, {
         type: 'doughnut',
         data: {
-          labels: ['Happy/Agreement', 'Sad/Disagreement', 'Angry', 'Neutral', 'Emotional(Surprise, Fear, Love, ...)'],
+          labels: ['Happy', 'Sad', 'Angry', 'Neutral', 'Passion/Surprise/Fear'],
           datasets: [{
             label: `# of ${id}`,
             data: data,
@@ -109,25 +109,24 @@ const ChartSection = () => {
       </div>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    </div>
+    </div >
 
-      <div className="task-progress" style={{marginTop: 80}}>
-        <p>How much similar are you in the <b style={{color: 'red'}}>real-world</b> compared to your <b style={{color: 'red'}}>tweets</b>?
-        <span>20/30</span>
+      <div className="task-progress" style={{marginTop: 80, width: '60%'}}>
+        <p>How much similarity exists between your <b style={{color: 'red'}}>real-world personality</b> and your <b style={{color: 'red'}}>tweets</b>? 
+        <span>{tweets_distance}/100</span>
         </p>
         <progress className="progress progress--task3" max="100" value={tweets_distance}></progress>
       </div>
 
-      <div className="task-progress" style={{marginTop: 50}}>
-        <p>How much similar are you in the <b style={{color: 'red'}}>real-world</b> compared to your <b style={{color: 'red'}}>images</b>?
-        <span>20/30</span>
-        </p>
+      <div className="task-progress" style={{marginTop: 50, width: '60%'}}>
+        <p>How much similarity exists between your <b style={{color: 'red'}}>real-world personality</b> and your <b style={{color: 'red'}}>images</b>? 
+        <span>{images_distance}/100</span></p>
         <progress className="progress progress--task4" max="100" value={images_distance}></progress>
       </div>
 
-      <div className="task-progress" style={{marginTop: 50}}>
-        <p>How much similar are your <b style={{color: 'red'}}>tweets</b> compared to your <b style={{color: 'red'}}>images</b>?
-        <span>20/30</span>
+      <div className="task-progress" style={{marginTop: 50, width: '60%'}}>
+        <p>How much similarity exists between your <b style={{color: 'red'}}>tweets</b> and your <b style={{color: 'red'}}>images</b>? 
+        <span>{tweet_image_dist}/100</span>
         </p>
         <progress className="progress progress--task2" max="100" value={tweet_image_dist}></progress>
       </div>
