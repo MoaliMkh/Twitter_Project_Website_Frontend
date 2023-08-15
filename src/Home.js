@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
   const [twitterID, setTwitterID] = useState("");
+  const [secretKey, setSecretKey] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [resultReady, setResultReady] = useState(false);
 
@@ -16,8 +17,9 @@ const Home = () => {
     const response = await axios.get("http://127.0.0.1:8000/user/", {
       params: { username: twitterID },
     });
-    if (response.data.data === "USER_NOT_FOUND"){
-      alert('Username is not valid!')
+    console.log(response.data)
+    if (response.data.data === "USER_NOT_FOUND" || (parseInt(response.data.id) + 100).toString() !== secretKey){
+      alert('Username or key is not valid!')
       setIsLoading(false);
 
     }
@@ -59,6 +61,8 @@ const Home = () => {
             twitterId={twitterID}
             setTwitterID={setTwitterID}
             submitCallback={submitID}
+            secretKey={secretKey}
+            setSecretKey={setSecretKey}
           />
         </>
       )}
