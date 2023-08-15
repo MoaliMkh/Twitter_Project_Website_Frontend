@@ -65,7 +65,7 @@ const ChartSection = () => {
         data: {
           labels: ['Happy/Agreement', 'Sad/Disagreement', 'Angry', 'Neutral', 'Emotional(Surprise, Fear, Love, ...)'],
           datasets: [{
-            label: '# of Votes',
+            label: `# of ${id}`,
             data: data,
             borderWidth: 1
           }]

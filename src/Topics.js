@@ -28,7 +28,6 @@ const Topics = () => {
 
       const sortedObjectTweetTopic = Object.entries(tweets_topic_dict).sort((x, y) => y[1] - x[1]);
       const sortedTweetTopics = Object.fromEntries(sortedObjectTweetTopic)
-      console.log(sortedTweetTopics)
 
       let images_topic_names = ['Animal', 'Landscape', 'Sport', 'Text', 'Art', 'Object', 'Food', 'People', 'Movie', 'Music', 'Shop']
       let images_topic_dict = {}
@@ -54,7 +53,7 @@ const Topics = () => {
 
             <h3>Topics of Your Tweets</h3>
             <hr />
-        <TweetsTopicsProgressBars progressData={sortedTweetTopics} len={tweets_topics.length} />
+        <TweetsTopicsProgressBars progressData={sortedTweetTopics} len={sum_of_tweet_topics} />
 
         </div>
 
@@ -63,7 +62,7 @@ const Topics = () => {
         <h3>Topics of Your Media Images</h3>
         <hr />
 
-        <ImagesTopicsProgressBars progressData={sortedImageTopics} len={images_topics.length}/>
+        <ImagesTopicsProgressBars progressData={sortedImageTopics} len={sum_of_image_topics}/>
 
         </div>
             </div>
