@@ -14,7 +14,7 @@ const Home = () => {
 
   const submitID = async () => {
     setIsLoading(true);
-    const response = await axios.get("http://127.0.0.1:8000/user/", {
+    const response = await axios.get("http://5.34.201.153:8000/user/", {
       params: { username: twitterID },
     });
     console.log(response.data)
