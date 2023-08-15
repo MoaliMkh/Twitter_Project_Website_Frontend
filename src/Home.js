@@ -16,11 +16,18 @@ const Home = () => {
     const response = await axios.get("http://127.0.0.1:8000/user/", {
       params: { username: twitterID },
     });
+    if (response.data.data === "USER_NOT_FOUND"){
+      alert('Username is not valid!')
+      setIsLoading(false);
+
+    }
+    else{
     setTimeout(function () {
       setIsLoading(false);
       setResultReady(true);
       navigate("/newcharts", { state: { all_data: response.data } });
     }, 1500);
+    }
   };
 
   return (
