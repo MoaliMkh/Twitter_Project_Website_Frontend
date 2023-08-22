@@ -28,7 +28,7 @@ const Home = () => {
       setIsLoading(false);
       setResultReady(true);
       navigate("/newcharts", { state: { all_data: response.data } });
-    }, 6000);
+    }, 10000);
     }
   };
 
@@ -43,11 +43,12 @@ const Home = () => {
             </h3>
             <hr />
           </div>
+          <Info/>
 
-          <div style={{ marginTop: 300 }}>
+          <div style={{ marginTop: 500 }}>
             
             <IsLoadingComponent style={{ marginBottom: 40 }} />
-            <Info style={{bottom: 20}}/>
+            
           </div>
         </>
       ) : resultReady ? null : (

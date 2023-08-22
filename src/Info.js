@@ -28,9 +28,7 @@ const Info = () => {
         <li>Obtaining 20 pictures from your latest media and your profile avatar on twitter and feeding them to a pipeline of <strong>Facial Expression and Face Recognition Models</strong>.</li>
         <li>Putting the results from the last two parts beside you friends' opinions about you. </li>
         <li>Calculating distances between <strong>Your Tweets</strong>, <strong>Your Media</strong> and <strong>Your Friends' Opinions</strong></li>
-
         </ul>
-
       </Modal>
     </>
   );
