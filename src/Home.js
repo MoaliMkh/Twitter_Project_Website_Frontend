@@ -4,6 +4,7 @@ import { useState } from "react";
 import InputComponent from "./InputComponent";
 import IsLoadingComponent from "./IsLoadingComponent";
 import { useNavigate } from "react-router-dom";
+import Info from "./Info";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -21,14 +22,13 @@ const Home = () => {
     if (response.data.data === "USER_NOT_FOUND" || (parseInt(response.data.id) + 100).toString() !== secretKey){
       alert('Username or key is not valid!')
       setIsLoading(false);
-
     }
     else{
     setTimeout(function () {
       setIsLoading(false);
       setResultReady(true);
       navigate("/newcharts", { state: { all_data: response.data } });
-    }, 1500);
+    }, 6000);
     }
   };
 
@@ -45,7 +45,9 @@ const Home = () => {
           </div>
 
           <div style={{ marginTop: 300 }}>
-            <IsLoadingComponent />
+            
+            <IsLoadingComponent style={{ marginBottom: 40 }} />
+            <Info style={{bottom: 20}}/>
           </div>
         </>
       ) : resultReady ? null : (

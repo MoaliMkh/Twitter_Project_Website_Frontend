@@ -20,13 +20,13 @@ const ChartSection = () => {
     useEffect(() => {
 
       const image_sentiments = state.all_data.images_sentiments.split('#').map(str => {
-        return parseInt(str, 10);
+        return parseFloat(str);
       });
       const tweet_sentiments = state.all_data.tweets_sentiments.split('#').map(str => {
         return parseInt(str, 10);
       });
       const friends_sentiments = state.all_data.friends_sentiments.split('#').map(str => {
-        return parseInt(str, 10);
+        return parseFloat(str);
       });
 
       if (chart1 != null){
