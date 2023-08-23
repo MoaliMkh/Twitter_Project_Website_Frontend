@@ -11,7 +11,7 @@ const Home = () => {
   const [twitterID, setTwitterID] = useState("");
   const [secretKey, setSecretKey] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [resultReady, setResultReady] = useState(false);
+  const [isResultReady, setResultReady] = useState(false);
 
   const submitID = async () => {
     setIsLoading(true);
@@ -51,7 +51,7 @@ const Home = () => {
             
           </div>
         </>
-      ) : resultReady ? null : (
+      ) : isResultReady ? null : (
         <>
           <div className="header-box">
             <h3>
