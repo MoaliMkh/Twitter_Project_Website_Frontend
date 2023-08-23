@@ -152,6 +152,16 @@ span {
 .task-progress-2 {
   display: flex;
   justify-content: center;
+  /* border: red solid 1px;
+   border-radius: 30px;
+   width: 200px;
+   margin: auto; /*
+} 
+
+.pb {
+  /* border: red solid 1px; */
+
+  
 }
 
 .progress-2 { 
