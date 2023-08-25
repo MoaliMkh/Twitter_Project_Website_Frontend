@@ -9,7 +9,7 @@ const InputComponent = (props) => {
     const setSecretKey = props.setSecretKey;
 
     return(
-        <div style={{width: '25%', alignSelf: 'center', marginLeft: '37.5%'}}>
+        <div className='input-box'>
             <p></p>
             <Input addonBefore="@" placeholder='Your Twitter ID' value={twitterID} onChange={(e) => {setTwitterID(e.target.value)}} />
             <Input.Password style={{marginTop: 10}} placeholder='Your Secret Key' value={secretKey} onChange={(e) => {setSecretKey(e.target.value)}} />
