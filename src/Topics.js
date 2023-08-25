@@ -42,11 +42,7 @@ const Topics = () => {
 
 
     return (
-        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', alignContent: 'center', paddingRight: 10}} >
-        
-        <Link to='/newcharts' state={state}>
-        <Button icon={<LeftOutlined />} size='large' style={{marginLeft: 40}} danger ghost>Prev</Button>
-        </Link>
+        <div className='box-con'> 
 
         <div className='bottom-container'>
         <div className='topics'>
@@ -66,7 +62,11 @@ const Topics = () => {
 
         </div>
             </div>
-                <Button icon={<RightOutlined />} disabled dir='rtl' size='large' style={{marginRight: 35}} danger ghost>Next</Button>
+
+	    <Link to='/newcharts' state={state}>
+        <Button icon={<LeftOutlined />} size='large' style={{marginLeft: 0}} danger ghost>Prev</Button>
+        </Link>
+
             </div>
 
             )
