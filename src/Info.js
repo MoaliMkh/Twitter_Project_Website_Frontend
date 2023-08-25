@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Modal } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
-const Info = () => {
+const Info = ({data}) => {
+  const navigate = useNavigate();  
   const [isModalOpen, setIsModalOpen] = useState(false);
   useEffect(() => {
     showModal()
@@ -13,6 +15,7 @@ const Info = () => {
 
   const handleOk = () => {
     setIsModalOpen(false);
+    //navigate("/newcharts", { state: { all_data: data } });
   };
 
   return (
