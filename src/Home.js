@@ -12,25 +12,31 @@ const Home = () => {
   const [secretKey, setSecretKey] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isResultReady, setResultReady] = useState(false);
+  const [backData, setBackData] = useState([]);
 
   const submitID = async () => {
     setIsLoading(true);
-    const response = await axios.get("http://5.34.201.153:8000/user/", {
-      params: { username: twitterID },
-    });
-    console.log(response.data)
-    if (response.data.data === "USER_NOT_FOUND" || (parseInt(response.data.id) + 100).toString() !== secretKey){
-      alert('Username or key is not valid!')
-      setIsLoading(false);
+    try {
+    	const response = await axios.get("http://5.34.201.153:8000/user/", {
+      		params: { username: twitterID },
+    	});
+    	setBackData(response.data);
+    	console.log(response.data)
+    	if (response.data.data === "USER_NOT_FOUND" || (parseInt(response.data.id) + 100).toString() !== secretKey){
+      		alert('Username or key is not valid!')
+      	setIsLoading(false);
+    	}
+    	else{
+    		setTimeout(function () {
+      		setIsLoading(false);
+      		setResultReady(true);
+      		navigate("/newcharts", { state: { all_data: response.data } });
+    		}, 8000);
+    	}
+    } catch(e) {
+	    alert('Connection failed! Please try again.')
     }
-    else{
-    setTimeout(function () {
-      setIsLoading(false);
-      setResultReady(true);
-      navigate("/newcharts", { state: { all_data: response.data } });
-    }, 10000);
-    }
-  };
+    };
 
   return (
     <div>
@@ -43,7 +49,7 @@ const Home = () => {
             </h3>
             <hr />
           </div>
-          <Info/>
+          <Info data={backData}/>
 
           <div style={{ marginTop: 500 }}>
             
