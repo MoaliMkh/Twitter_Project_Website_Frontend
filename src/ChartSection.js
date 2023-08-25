@@ -13,9 +13,9 @@ let chart3 = null;
 const ChartSection = () => {
   const {state} = useLocation();
 
-      const images_distance = parseInt(state.all_data.images_distance)
-      const tweets_distance = parseInt(state.all_data.tweets_distance)
-      const tweet_image_dist = parseInt(state.all_data.images_tweets_distance)
+      const images_distance = parseFloat(state.all_data.images_distance)
+      const tweets_distance = parseFloat(state.all_data.tweets_distance)
+      const tweet_image_dist = parseFloat(state.all_data.images_tweets_distance)
 
     useEffect(() => {
 
@@ -23,7 +23,7 @@ const ChartSection = () => {
         return parseFloat(str);
       });
       const tweet_sentiments = state.all_data.tweets_sentiments.split('#').map(str => {
-        return parseInt(str, 10);
+        return parseFloat(str, 10);
       });
       const friends_sentiments = state.all_data.friends_sentiments.split('#').map(str => {
         return parseFloat(str);
@@ -65,7 +65,7 @@ const ChartSection = () => {
         data: {
           labels: ['Happy', 'Sad', 'Angry', 'Neutral', 'Passion/Surprise/Nostalgia'],
           datasets: [{
-            label: `# of ${id}`,
+            label: `% of ${id}`,
             data: data,
             borderWidth: 1
           }]
@@ -86,7 +86,7 @@ const ChartSection = () => {
         <h3>How Much Similarity Do You Have in The Real-World with Your Characteristics in Social Media?</h3>
         <hr />    
       </div>
-      <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', alignContent: 'center', paddingRight: 10}}>
+      <div className='box-con'>
       <div className='top-container' style={{marginTop: 0, marginRight: 10}}>
 
       <div className='sentiment-container'>
@@ -111,20 +111,20 @@ const ChartSection = () => {
 
     </div >
 
-      <div className="task-progress" style={{marginTop: 80, width: '60%'}}>
+      <div className="task-progress">
         <p>How much similarity exists between your <b style={{color: 'red'}}>real-world personality</b> and your <b style={{color: 'red'}}>tweets</b>? 
         <span>{tweets_distance}/100</span>
         </p>
         <progress className="progress progress--task3" max="100" value={tweets_distance}></progress>
       </div>
 
-      <div className="task-progress" style={{marginTop: 50, width: '60%'}}>
+      <div className="task-progress">
         <p>How much similarity exists between your <b style={{color: 'red'}}>real-world personality</b> and your <b style={{color: 'red'}}>images</b>? 
         <span>{images_distance}/100</span></p>
         <progress className="progress progress--task4" max="100" value={images_distance}></progress>
       </div>
 
-      <div className="task-progress" style={{marginTop: 50, width: '60%'}}>
+      <div className="task-progress">
         <p>How much similarity exists between your <b style={{color: 'red'}}>tweets</b> and your <b style={{color: 'red'}}>images</b>? 
         <span>{tweet_image_dist}/100</span>
         </p>
