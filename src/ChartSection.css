@@ -68,8 +68,9 @@
   }
   
   .task-progress {
-    width: 50%; 
+    width: 60%; 
     margin: auto;
+    margin-top: 50px;
   }
   
   .task-progress p {
@@ -257,3 +258,65 @@
   h3 {
     padding-top: 30px;
   }
+
+  .box-con {
+  	display: flex;
+       	flex-direction: row;
+       	align-items: center;
+       	align-content: center;
+       	padding-right: 10px;
+  }
+
+  .top-container {
+    margin-bottom: 20px;
+  }
+@media screen and (max-width: 900px) {
+ 
+   .top-container {
+     width: 85%;
+     margin-right: auto;
+     margin-left: auto;
+   }	   
+  .bottom-container {
+        width: 90%;
+        flex-direction: column;
+  }
+
+  .bottom-container {
+    width: 95%;
+  }
+
+  .topics {
+        width: 85%;
+	margin:auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+  }
+  
+  .sentiment-container {
+        flex-direction: column;
+  }
+
+  .pie-chart {
+        width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
+  }
+
+  .task-progress {
+	width: 90%;
+	margin: auto;
+  }
+
+  .box-con {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        padding-right: 10px;
+  }
+
+  .task-progress {
+	font-size: 13px;
+  }
+}
